@@ -6,9 +6,8 @@ var API = require('./index');
 var BSEAPI = API.BSE;
 var NSEAPI = API.NSE;
 
-var PORT = process.env.PORT || 4000;
 var app = express();
-// app.use(cors());
+app.use(cors());
 
 const { createProxyMiddleware } = require('http-proxy-middleware');
 // app.use('/', createProxyMiddleware({
@@ -20,8 +19,8 @@ const { createProxyMiddleware } = require('http-proxy-middleware');
 //     }
 // }));
 
-app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
+app.listen(4000, () => {
+    console.log("Server running on port 4000");
 });
 
 // app.all('*', function(req, res, next) {
